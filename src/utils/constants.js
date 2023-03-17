@@ -1,0 +1,7 @@
+export const GET_USERS = 'GET_USERS'
+export const USER_COMMENT = 'USER_COMMENT'
+export const POST_BY_USER_ID = 'POST_BY_USER_ID'
+
+export const LOADING = 'LOADING'
+export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS'
+export const GET_USERS_FAILURE = 'GET_USERS_FAILURE'
