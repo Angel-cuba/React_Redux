@@ -1,4 +1,3 @@
-import { allUsers } from '../../api/request';
 import { GET_USERS, LOADING, POST_BY_USER_ID } from '../../utils/constants';
 
 export const initialState = {
@@ -8,14 +7,14 @@ export const initialState = {
   error: null,
 };
 
-export default async function userReducer(
+export function userReducer(
   state = {
     users: [],
     postsByUserId: [],
     loading: false,
     error: null,
   },
-  action
+  action: any
 ) {
   switch (action.type) {
     case LOADING:{
@@ -30,7 +29,6 @@ export default async function userReducer(
         return {
           ...state,
           users: action.payload,
-          loading: false,
         };
       } catch (error) {
         console.log(error);
