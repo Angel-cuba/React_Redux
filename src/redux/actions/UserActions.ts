@@ -1,8 +1,8 @@
 import { Dispatch } from 'redux';
 import { allUsers } from '../../api/request';
-import { GET_USERS } from '../../utils/constants';
+import { GET_USERS, User } from '../../utils/constants';
 
-export const GetUsers = (users: any) =>  {
+export const GetUsers = (users: User) =>  {
 return {
 type: GET_USERS,
 payload: users

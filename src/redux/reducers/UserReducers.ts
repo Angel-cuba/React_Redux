@@ -1,6 +1,13 @@
-import { GET_USERS, LOADING, POST_BY_USER_ID } from '../../utils/constants';
+import { GET_USERS, LOADING, POSTS_BY_USER_ID, STOP_LOADING, User } from '../../utils/constants';
 
-export const initialState = {
+type UserState = {
+  users: User[];
+  postsByUserId: any[];
+  loading: boolean;
+  error: any;
+};
+
+export const initialState: UserState = {
   users: [],
   postsByUserId: [],
   loading: false,
@@ -34,14 +41,12 @@ export function userReducer(
         console.log(error);
       }
     }
-    case POST_BY_USER_ID: {
+    case STOP_LOADING: {
       return {
         ...state,
-        postsByUserId: action.payload,
         loading: false,
       };
     }
-      
     default:
       return state;
   }
